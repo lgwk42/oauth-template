@@ -22,7 +22,7 @@ class GoogleService(
     }
 
     private fun uriComponentGoogleTokenInfo(idToken: String): URI {
-        return UriComponentsBuilder.fromUriString(googleProperties.tokenInfo)
+        return UriComponentsBuilder.fromUriString(googleProperties.tokenUri)
             .queryParam("id_token", idToken)
             .queryParam("Type", "json")
             .encode()

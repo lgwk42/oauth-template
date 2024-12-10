@@ -5,5 +5,5 @@ import org.springframework.stereotype.Component
 
 @Component
 data class GoogleProperties(
-    @Value("\${spring.security.oauth2.client.provider.google}") val tokenInfo: String
+    @Value("\${spring.security.oauth2.client.provider.google.token-uri}") val tokenUri: String
 )
