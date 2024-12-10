@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/{schema}?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: {password}
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: {id}
+            client-secret: {secret}
+        provider:
+          google:
+            token-info: https://oauth2.googleapis.com/tokeninfo
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+application:
+  jwt:
+    secretKey: {secret-key}
+    expiration: 172800000    # 48시간
+    refreshExpiration: 604800000   # 7일
